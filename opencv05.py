@@ -17,7 +17,7 @@ def show_diff(img, dst):
     plt.show()
 
 
-def blur_filter2D(args):
+def filter2DBlur(args):
     size = args['kernel_size']
     img = imread_RGB(args['src'])
     kernel = np.ones((size, size), np.float32) / (size * size)
@@ -27,7 +27,7 @@ def blur_filter2D(args):
     return dst
 
 
-def blur_average(args):
+def averageBlur(args):
     size = args['kernel_size']
     img = imread_RGB(args['src'])
     dst = cv2.blur(img, (size, size))
@@ -36,7 +36,7 @@ def blur_average(args):
     return dst
 
 
-def blur_gaussian(args):
+def gaussianBlur(args):
     size = args['kernel_size']
     img = imread_RGB(args['src'])
     dst = cv2.GaussianBlur(img,(size, size), 0)
@@ -44,6 +44,13 @@ def blur_gaussian(args):
         show_diff(img, dst)
     return dst
 
+def medianBlur(args):
+    size = args['kernel_size']
+    img = imread_RGB(args['src'])
+    dst = cv2.medianBlur(img, size)
+    if args['show']:
+        show_diff(img, dst)
+    return dst
 
 if __name__ == '__main__':
     args = {}
@@ -51,8 +58,9 @@ if __name__ == '__main__':
     args['kernel_size'] = 19
     args['show'] = True
 
-    img1 = blur_filter2D(args)
-    #img2 = blur_average(args)
-    #img2 = blur_gaussian(args)
+    img1 = filter2DBlur(args)
+    #img2 = averageBlur(args)
+    img2 = gaussianBlur(args)    
+    #img2 = medianBlur(args)
 
-    #show_diff(img1, img2)
+    show_diff(img1, img2)
