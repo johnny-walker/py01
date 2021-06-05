@@ -25,7 +25,6 @@ def save_video(argv=None):
             # ESC
             if key == 27:
                 break
-
         else:
             break
 
