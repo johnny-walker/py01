@@ -8,7 +8,6 @@ img = cv2.imread('data/dog.jpeg')
 
 # 將 BGR 圖片轉為 RGB 圖片
 img = img[:,:,::-1]
-
 # 或是這樣亦可
 #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 

@@ -8,7 +8,6 @@ def imread_RGB(src):
     img = cv2.imread(src)
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-
 def show_diff(img, dst):
     plt.subplot(121), plt.imshow(img), plt.title('Image 1')
     plt.xticks([]), plt.yticks([])

@@ -5,12 +5,16 @@ import cv2
 
 img = cv2.imread('data/dog.jpeg')
 cv2.imshow('My Image', img)
+print(img.shape)
+
 
 #img_gray = cv2.imread('data/dog.jpeg', cv2.IMREAD_GRAYSCALE)
 #cv2.imshow('My Image2', img_gray)
 
 # 讓視窗可以自由縮放大小
+height, width = img.shape[:2]
 cv2.namedWindow('My Image', cv2.WINDOW_NORMAL)
+cv2.resizeWindow('My Image', (width//2, height//2))
 
 # 按下任意鍵則關閉所有視窗
 cv2.waitKey(0)
