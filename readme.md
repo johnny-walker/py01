@@ -4,4 +4,4 @@
 03: main & function \
 04: video capture \
 05: image process - blur \
-06: image transfrmation \
+06: image transfrmation - translate & rotate \
