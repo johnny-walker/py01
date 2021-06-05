@@ -57,6 +57,11 @@ def translate(args):
     # [ 1, 0, tx
     #   0, 1, ty ]
     M = np.float32( [[1, 0, args['tx']], [0, 1, args['ty']]] )
+    '''
+    src – 输入图像。
+    M – 变换矩阵。
+    dsize – 输出图像的大小。
+    '''
     dst = cv2.warpAffine(img, M, (cols,rows))
 
     show_diff(img, dst)
