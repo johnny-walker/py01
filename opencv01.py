@@ -1,8 +1,16 @@
+import os
 import numpy as np 
 import cv2 
 
-# 讀取圖檔
+def check_dir(filepath):
+    separators = os.path.split(filepath)
+    if separators:
+        dir = filepath.replace(separators[-1], '')
+        if not os.path.isdir(dir):
+            os.mkdir(dir)
+            print('create folder:', dir)
 
+# 讀取圖檔
 img = cv2.imread('data/dog.jpeg')
 cv2.imshow('My Image', img)
 print(img.shape)
@@ -22,8 +30,11 @@ cv2.destroyAllWindows()
 
 
 # 寫入圖檔
+output = 'output/output.png'
+check_dir(output)
+
 # 寫入不同圖檔格式
-cv2.imwrite('output/output.png', img)
+cv2.imwrite(output, img)
 #cv2.imwrite('output/output.tiff', img)
 
 # 設定 JPEG 圖片品質為 90（可用值為 0 ~ 100）
