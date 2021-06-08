@@ -10,8 +10,11 @@ def check_dir(filepath):
             os.mkdir(dir)
             print('create folder:', dir)
 
+
 # 讀取圖檔
-img = cv2.imread('data/dog.jpeg')
+print(os.path.abspath(os.path.dirname(__file__)))
+path = os.path.join(os.path.dirname(__file__), 'data/dog.jpeg')
+img = cv2.imread(path)
 cv2.imshow('My Image', img)
 print(img.shape)
 
