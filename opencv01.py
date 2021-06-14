@@ -1,5 +1,4 @@
 import os
-import numpy as np 
 import cv2 
 
 def check_dir(filepath):
