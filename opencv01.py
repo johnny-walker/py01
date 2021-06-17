@@ -12,13 +12,13 @@ def check_dir(filepath):
 
 # 讀取圖檔
 print(os.path.abspath(os.path.dirname(__file__)))
-path = os.path.join(os.path.dirname(__file__), 'data/dog.jpeg')
+path = os.path.join(os.path.dirname(__file__), 'data/tiger.jpeg')
 img = cv2.imread(path)
 cv2.imshow('My Image', img)
-print(img.shape)
+print(img.shape)   # (h, w, c)
 
 
-#img_gray = cv2.imread('data/dog.jpeg', cv2.IMREAD_GRAYSCALE)
+#img_gray = cv2.imread('data/tiger.jpeg', cv2.IMREAD_GRAYSCALE)
 #cv2.imshow('My Image2', img_gray)
 
 # 讓視窗可以自由縮放大小
