@@ -116,7 +116,7 @@ if __name__ == '__main__':
     parser.add_argument('--angle', type=int, default=10, help='rotation angle') 
     parser.add_argument('--scale', type=float, default=0.5, help="scale ratio") 
     parser.add_argument('--output', default='output/output.png', help="output result") 
-    parser.add_argument('--save', default=True, help="save result") 
+    parser.add_argument('--save', action='store_true', help="save result") 
     args = parser.parse_args()
 
     img = None
