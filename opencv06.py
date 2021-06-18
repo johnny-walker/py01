@@ -7,12 +7,10 @@ import cv2
 from matplotlib import pyplot as plt
 
 def check_dir(filepath):
-    separators = os.path.split(filepath)
-    if separators:
-        dir = filepath.replace(separators[-1], '')
-        if not os.path.isdir(dir):
-            os.mkdir(dir)
-            print('create folder:', dir)
+    dir = os.path.dirname(filepath)
+    if not os.path.isdir(dir):
+        os.mkdir(dir)
+        print('create folder:', dir)
 
 
 def imread_RGB(src):

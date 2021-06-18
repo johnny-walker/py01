@@ -2,13 +2,10 @@ import os
 import cv2 
 
 def check_dir(filepath):
-    separators = os.path.split(filepath)
-    if separators:
-        dir = filepath.replace(separators[-1], '')
-        if not os.path.isdir(dir):
-            os.mkdir(dir)
-            print('create folder:', dir)
-
+    dir = os.path.dirname(filepath)
+    if not os.path.isdir(dir):
+        os.mkdir(dir)
+        print('create folder:', dir)
 
 # 讀取圖檔
 print(os.path.abspath(os.path.dirname(__file__)))

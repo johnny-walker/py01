@@ -2,12 +2,10 @@ import os
 import cv2
 
 def check_dir(filepath):
-    separators = os.path.split(filepath)
-    if separators:
-        dir = filepath.replace(separators[-1], '')
-        if not os.path.isdir(dir):
-            os.mkdir(dir)
-            print('create folder:', dir)
+    dir = os.path.dirname(filepath)
+    if not os.path.isdir(dir):
+        os.mkdir(dir)
+        print('create folder:', dir)
 
 def capture_video(args):
     print('OpenCV 版本:',cv2.__version__)
