@@ -107,7 +107,7 @@ def animate_rotate(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--src', default='data/dog.jpeg', help="source file")
+    parser.add_argument('--src', default='data/mouse.png', help="source file")
     parser.add_argument('--show', action='store_true', help="source file")
     parser.add_argument('--tx', type=int, default=200, help='horizontal translation') 
     parser.add_argument('--ty', type=int, default=150, help='veritcal translation') 
